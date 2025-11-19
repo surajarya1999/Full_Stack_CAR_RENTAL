@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'https://backend-car-gamma.vercel.app/api',
     withCredentials: true, // for cookies
 });
 
