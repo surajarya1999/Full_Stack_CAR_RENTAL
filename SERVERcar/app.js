@@ -5,7 +5,8 @@ const web = require('./route/web')
 const connectdb = require('./db/connectDB')
 const cors = require('cors')
 const env = require('dotenv')
-const fileUpload = require('express-fileupload')
+const upload = require("./config/multer");
+
 
 
 
@@ -17,10 +18,10 @@ app.use(cors({
 }))
 
 
-app.use(fileUpload({
-  useTempFiles: true,
-  tempFileDir: "/tmp/",   // zaroori hai cloudinary ke liye
-}));
+// app.use(fileUpload({
+//   useTempFiles: true,
+//   tempFileDir: "/tmp/",   // zaroori hai cloudinary ke liye
+// }));
 
 
 //mogoose
