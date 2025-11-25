@@ -1,1 +1,6 @@
-/*    /index.html   200
+# 🔄 Backend APIs should NOT redirect to index.html
+/api/*   https://backend-car-gamma.vercel.app/:splat   200
+
+# 🎯 React frontend routes
+/*       /index.html    200
+
