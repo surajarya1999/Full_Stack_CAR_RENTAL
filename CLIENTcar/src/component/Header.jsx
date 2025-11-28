@@ -21,10 +21,42 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-danger py-3">
-      <div className="container-fluid px-5">
-        <Link className="navbar-brand fw-bold fs-3" to="/">
-          🚗 PrimeDrive
+    <nav
+      className="navbar navbar-expand-lg navbar-dark py-3"
+      style={{
+        background: "rgba(27, 26, 26, 0.2)",
+        backdropFilter: "blur(2px)",
+        WebkitBackdropFilter: "blur(1px)",
+        borderBottom: "1px solid rgba(94, 90, 90, 0.2)",
+        position: "fixed",
+        width: "100%",
+        height: "80px",
+        top: 0,
+        zIndex: 999,
+      }}
+    >
+      {/* RESPONSIVE CSS */}
+      <style>
+        {`
+      .navbar-nav .nav-link {
+        transition: color 0.3s ease-in-out;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #fae104ff !important;
+      }
+
+      /* MOBILE LOGO SIZE */
+      @media (max-width: 768px) {
+        .navbar-brand img {
+          height: 55px !important;
+        }
+      }
+    `}
+      </style>
+
+      <div className="container-fluid px-4">
+        <Link className="navbar-brand" to="/">
+          <img src="/logo.png" alt="Logo" style={{ height: "85px" }} />
         </Link>
 
         <button
@@ -40,7 +72,7 @@ function Navbar() {
           className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
-          <ul className="navbar-nav gap-4">
+          <ul className="navbar-nav gap-3 text-center">
             <li className="nav-item">
               <Link className="nav-link text-white fw-semibold fs-5" to="/">
                 Home
@@ -72,6 +104,7 @@ function Navbar() {
                 </Link>
               </li>
             )}
+
             <li className="nav-item">
               <Link
                 className="nav-link text-white fw-semibold fs-5"
@@ -82,7 +115,7 @@ function Navbar() {
             </li>
           </ul>
 
-          <div className="d-flex ms-3">
+          <div className="d-flex ms-lg-3 mt-3 mt-lg-0 justify-content-center">
             {!user ? (
               <>
                 <Link to="/login" className="btn btn-outline-light me-2">
