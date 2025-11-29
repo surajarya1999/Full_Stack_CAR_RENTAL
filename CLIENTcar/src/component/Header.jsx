@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
+import API from "../../src/services/api";
+
 
 function Navbar() {
   const { user, setUser } = useContext(AuthContext);
@@ -9,10 +11,7 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:3000/api/logout", {
-        method: "POST",
-        credentials: "include",
-      });
+      await API.post("/logout"); // LIVE backend automatically call hoga
       setUser(null);
       navigate("/");
     } catch (error) {

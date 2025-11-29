@@ -293,10 +293,11 @@ export default function CarDetails() {
                 />
               </div>
               <div className="col-md-6">
-                <input
+                Pickup Date<input
                   type="date"
                   className="form-control"
                   name="fromdate"
+                  placeholder="Pickup Date"
                   value={formData.fromdate}
                   min={new Date().toISOString().split("T")[0]}
                   onChange={handleChange}
@@ -304,10 +305,11 @@ export default function CarDetails() {
                 />
               </div>
               <div className="col-md-6">
-                <input
+                Return Date<input
                   type="date"
                   className="form-control"
                   name="todate"
+                  placeholder="Return Date"
                   value={formData.todate}
                   min={
                     formData.fromdate || new Date().toISOString().split("T")[0]
