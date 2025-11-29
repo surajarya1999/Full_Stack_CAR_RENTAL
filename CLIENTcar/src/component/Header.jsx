@@ -35,23 +35,45 @@ function Navbar() {
         zIndex: 999,
       }}
     >
-      {/* RESPONSIVE CSS */}
       <style>
         {`
-      .navbar-nav .nav-link {
-        transition: color 0.3s ease-in-out;
-      }
-      .navbar-nav .nav-link:hover {
-        color: #fae104ff !important;
-      }
+  .navbar-nav .nav-link {
+    transition: color 0.3s ease-in-out;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #fae104ff !important;
+  }
 
-      /* MOBILE LOGO SIZE */
-      @media (max-width: 768px) {
-        .navbar-brand img {
-          height: 55px !important;
-        }
-      }
-    `}
+  /* MOBILE RESPONISVE LOGO */
+  @media (max-width: 768px) {
+    .navbar-brand img {
+      height: 55px !important;
+    }
+  }
+
+  /* ⭐ FULL-WIDTH BACKGROUND + BLUR ⭐ */
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      position: absolute !important;
+      top: 100%;
+      left: 0;
+      width: 100% !important;
+
+      background: rgba(0, 0, 0, 0.75) !important;
+      backdrop-filter: blur(15px) !important;
+      -webkit-backdrop-filter: blur(15px) !important;
+
+      padding: 15px;
+      border-radius: 0;   /* pura rectangle */
+      margin: 0 !important; /* left-right gap 0 */
+      z-index: 999;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+  }
+`}
       </style>
 
       <div className="container-fluid px-4">
