@@ -30,7 +30,11 @@ const Login = () => {
 
       if (role === "staff") {
         endpoint = "/staff/login";
-        payload = { staffId: formData.staffId, password: formData.password };
+        payload = {
+          staffId: formData.staffId || "",
+          email: formData.email || "",
+          password: formData.password,
+        };
       } else if (role === "admin") {
         endpoint = "/admin/login";
         payload = { email: formData.email, password: formData.password };
@@ -187,7 +191,7 @@ const Login = () => {
                     <input
                       type="text"
                       id="staffId"
-                      name="staffId" 
+                      name="staffId"
                       className="form-control bg-transparent text-white border-light"
                       placeholder="Staff ID"
                       required
